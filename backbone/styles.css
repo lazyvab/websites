@@ -1,0 +1,25 @@
+#myImage, #myList {
+  position: absolute;
+}
+#myList {
+  font-size: 2rem;
+  font-weight: bold;
+}
+div[data-nav-section] { display: none; }
+div[data-nav-section].active { display: block; }
+.content { margin: 1rem; }
+.templates { display: none; }
+#view-cart-button {
+  float: right;
+  margin-top: 0.5rem;
+}
+.btn-previous {
+  float: left;
+}
+.modal-body {
+  min-height: 25rem;
+}
+
+.external-link {
+	text-decoration: underline !important;
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Website</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  
+  <script src="https://code.jquery.com/jquery-2.0.3.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="underscore-min.js"></script>
+  <script src="backbone-min.js"></script>
+  <script src="app.js"></script>
+  <script src="cart.js"></script>
+  <script src="router.js"></script>
+  
+</head>
+<body>
+<div id="target-spa-tracker" data-view=""></div>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">My Website</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+	  <li><a href="page2.html" class="external-link">Visit page 2</a></li>
+    </ul>
+    <button id="view-cart-button" type="button" class="btn btn-info" >View Cart</button>
+    </div>
+  </nav>
+  
+  <div class="content"></div>
+  
+  <div class="templates">
+	<script type="x-tmpl" data-nav-section="#">
+	  <h3>Welcome User!</h3>
+	  <div class="mbox-name-abc">MBOX</div>
+	  <br>
+	  <img id="myImage" src="Color.jpg"/>
+	</script>
+	<script type="x-tmpl" data-nav-section="#products">
+	  <h3>Products:</h3>
+	  <ul id="myList">
+		<li>Item 1</li>
+		<li>Item 2</li>
+		<li>Item 3</li>
+		<li>Item 4</li>
+		<li>Item 5</li>
+	  </ul>
+	</script>
+	<script type="x-tmpl" data-nav-section="#about">
+	  <h3>About us</h3>
+	  <p>This website is an example of Single Page Application where clicking on links in navigation bar displays corresponding page without page load.</p>
+	</script>
+	<script type="x-tmpl" data-nav-section="#contact">
+	  <h3>Contact us</h3>
+	  <p>In case you have any query, please feel free to email us at <a href="mailto:example@adobe.com">example@adobe.com</a>.</p>
+	  <img id="phone" src="phone.png"/>
+	</script>
+	
+    <script type="x-tmpl" class="modal-template">
+      <!-- Modal -->
+      <div class="modal fade" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">View Cart</h4>
+            </div>
+            <div class="modal-body">
+              <p>Below are the items you want to purchase:</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default btn-previous">Previous</button>
+              <button type="button" class="btn btn-default btn-next">Next</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </script>
+    
+	<script type="x-tmpl" class="modal-step-content" data-index="0" data-view="review">
+	  <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal">&times;</button>
+		<h4 class="modal-title">Review cart</h4>
+	  </div>
+	  <div class="modal-body">
+		<p>Below are the items you want to purchase:</p>
+		<ul>
+		  <li>Item 2 <i>(remove)</i></li>
+		  <li>Item 3 <i>(remove)</i></li>
+		  <li>Item 5 <i>(remove)</i></li>
+		</ul>
+	  </div>
+	  <div class="modal-footer">
+		<button type="button" class="btn btn-default btn-next">Proceed</button>
+	  </div>
+	</script>
+	<script type="x-tmpl" class="modal-step-content" data-index="1" data-view="shipment">
+	  <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal">&times;</button>
+		<h4 class="modal-title">Shipment details</h4>
+	  </div>
+	  <div class="modal-body">
+		<p>Enter the address where the order is to be delivered:</p>
+		<div>
+		  <textarea rows="8" cols="50"></textarea>
+		</div>
+	  </div>
+	  <div class="modal-footer">
+		<button type="button" class="btn btn-default btn-previous">Previous</button>
+		<button type="button" class="btn btn-default btn-next">Proceed</button>
+	  </div>
+	</script>
+	<script type="x-tmpl" class="modal-step-content" data-index="2" data-view="payment">
+	  <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal">&times;</button>
+		<h4 class="modal-title">Payment details</h4>
+	  </div>
+	  <div class="modal-body">
+		<p>Choose payment method:</p>
+		<ul>
+		  <li>Cash on delivery</li>
+		  <li>Credit/debit card</li>
+		  <li>Netbanking</li>
+		  <li>Paytm</li>
+		</ul>
+	  </div>
+	  <div class="modal-footer">
+		<button type="button" class="btn btn-default btn-previous">Previous</button>
+		<button type="button" class="btn btn-default" data-dismiss="modal">Place order</button>
+	  </div>
+	</script>
+  </div>
+</body>
